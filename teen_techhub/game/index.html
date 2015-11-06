@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" media="all" href="css/introtogame.css">
+	<script type="text/javascript" src="../libs/jquery-2.1.1.min.js"></script>
+</head>
+<body>
+	<nav class='nav'>
+		<ul>
+			<li><a href="../index.html">Home</a></li>
+		</ul>
+	</nav>
+
+	<main>
+		<section id='slide1' class="homeSlide">
+			
+		</section>
+		<section id='slide2' class="game-instructions homeSlide">
+			<h2 class='heading margin-top-sm'>Welcome to Teen Tech Hub's gaming app!</h2>
+			<div class="width-lg center">
+				<p class='padding-bottom-sm'>Your objective is to save Princess Riley from the evil sorceress.</p>
+				<p class='padding-bottom-sm'>To save the princess, you will have to learn how to program in javascript.</p>
+				<p class='padding-bottom-sm'>Each scene contains hidden clues that will help you complete a javascript challenge.</p>
+				<p class="padding-bottom-sm">As you progress through the game, you will be awarded point that can be redeemed at any Teen Tech Hub for prizes. The more points you gather the greater the prize.</p>
+				<p class="padding-bottom-sm">Good luck on your quest!</p>
+				<a href="./game1.html"><button class="margin-top-sm">Let's Play!</button></a>
+			</div>
+		</section>
+	</main>
+
+
+
+	
+	<script type="text/javascript">
+		$('.homeSlide').css('height', window.innerHeight);
+		$(window).resize(function(e) {
+			$('.homeSlide').css('height', e.target.outerHeight);
+		});
+
+
+	</script>
+</body>
+</html>
+
+
