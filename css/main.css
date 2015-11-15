@@ -1,0 +1,600 @@
+@-moz-viewport { width: device-width; scale: 1; }
+@-ms-viewport { width: device-width; scale: 1; }
+@-o-viewport { width: device-width; scale: 1; }
+@-webkit-viewport { width: device-width; scale: 1; }
+@viewport { width: device-width; scale: 1; }
+
+* {
+	/*outline: red 1px solid;*/
+	padding: 0;
+	margin: 0;
+}
+
+html, body {
+	max-width: 110em;
+	min-width: 30em;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	font: 100%/1.5 Helvetica;
+	font-weight: bold;
+	color: #353030;
+}
+a {
+	text-decoration: none;
+	color: #353030;
+}
+a:hover {
+	color: #888;
+}
+li {
+	list-style-type: none;
+}
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+input {
+	border-radius: 4px;
+	height: 2em;
+	font-size: inherit;
+	color: inherit;
+	font: inherit;
+}
+
+textarea {
+	border-radius: 4px;
+	overflow: auto;
+	border-style: inset;
+}
+select {
+	height: 2.5em;
+	line-height: 2.5em;
+	border-radius: 4px;
+	font: inherit;
+	color: inherit;
+	padding: .2em 1em;
+	background: #fff;
+}
+section {
+	margin-top: 3em; 
+}
+.btn {
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 110%;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	    touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 5px;
+	font: inherit;
+	color: inherit;
+}
+.btn-default {
+  color: inherit;
+  background-color: #fff;
+  border-color: #ccc;
+}
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.btn:hover,
+.btn:focus,
+.btn.focus {
+  color: #333;
+  text-decoration: none;
+}
+.btn:active,
+.btn.active {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+          box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+button:active {
+  box-shadow: 0 2px 0 #006599;
+  transform: translateY(3px);
+}
+.font-blue {
+	color: blue;
+}
+.font-white {
+	color: white;
+}
+
+.margin-top-sm {
+	margin-top: .5em;
+}
+.margin-bottom-sm {
+	margin-bottom: .5em;
+}
+.margin-top-med {
+	margin-top: 2em;
+}
+.margin-bottom-med {
+	margin-bottom: 2em; 
+}
+.margin-top-lg {
+	margin-top: 3em;
+}
+.margin-bottom-lg {
+	margin-bottom: 3em;
+}
+.padding-top-med {
+	padding-top: 2em;
+}
+.padding-bottom-med {
+	padding-bottom: 2em;
+}
+.padding-top-sm {
+	padding-top: .5em;
+}
+.padding-bottom-sm {
+	padding-bottom: .5em;
+}
+.width-med {
+	width: 50%;
+}
+.center {
+	margin-right: auto;
+	margin-left: auto;
+}
+.lead {
+	font-size: 150%;
+
+}
+.heading {
+	color: #212121;
+	font-size: 250%;
+}
+.container {
+	position: relative;
+}
+
+/* nav */
+nav {
+	height: 3em;
+	line-height: 3em;
+	position: absolute;
+	width: 100%;
+	z-index: 1;
+	background-color: rgba(6,6,6,.55);
+	top: 0;
+}
+nav a {
+	color: white;
+}
+nav ul > li {
+	padding-left: 1.5em;
+	padding-right: 1.5em;
+	display: inline-block;
+}
+
+/* end nav */
+
+/* header */
+/* parallax effects */
+#slide1 {
+	background-size: 100%;
+	background: linear-gradient(to left, rgba(0, 0, 0, .95), rgba(0, 0, 0, 0)), url(../images/banner.jpg) no-repeat fixed top / cover;
+}
+/* end parallax effects */
+header {
+	padding-top: 4em;
+	padding-bottom: 4em;
+	height: auto;
+}
+header .game {
+	float: left;
+	padding-top: 20%;
+	padding-left: 5%;
+	width: 30%;
+	color: yellow;
+	font-size: 250%;
+}
+header img {
+	float: right;
+	vertical-align: middle;
+	width: 50%;
+	padding-right: 5%;
+	padding-top: 10%;
+}
+header button {
+  background-image: linear-gradient(#ff1, #fd3);
+  width: 100%;
+  padding: 5%;
+  border-radius: 8px;
+  font-size: 100%;
+  font-weight: bold;
+  cursor: pointer;
+}
+header button:active {
+  box-shadow: 0 2px 0 #006599;
+  transform: translateY(3px);
+}
+/* end header */
+
+/* main */
+#main {
+height: 100%;
+background-color: rgba(0,0,0,.5);
+}
+/* teen-stats section */
+#teen-stats p {
+	width: 75%;
+	min-width: 25em;
+}
+/* rotate the words for teen stats */
+.rw-words-1 div{
+	position: absolute;
+	opacity: 0;
+	margin-right: auto;
+	margin-left: auto; 
+	width: 100%;
+	overflow: hidden;
+	color: #353030;
+	-webkit-animation: rotateWord 18s linear infinite 0s;
+	-ms-animation: rotateWord 18s linear infinite 0s;
+	animation: rotateWord 18s linear infinite 0s;
+}
+.rw-words-1 div::before {
+	content: url(../images/bullet.gif);
+	position: relative;
+	bottom: 3px;
+	padding-right: .5em;
+}
+
+.rw-words-1 div:nth-child(1) { 
+  -webkit-animation-delay: 0s; 
+	-ms-animation-delay: 0s; 
+	animation-delay: 0s; 
+}
+.rw-words-1 div:nth-child(2) { 
+  -webkit-animation-delay: 3s; 
+	-ms-animation-delay: 3s; 
+	animation-delay: 3s; 
+}
+.rw-words-1 div:nth-child(3) { 
+  -webkit-animation-delay: 6s; 
+	-ms-animation-delay: 6s; 
+	animation-delay: 6s; 
+}
+.rw-words-1 div:nth-child(4) { 
+  -webkit-animation-delay: 9s; 
+	-ms-animation-delay: 9s; 
+	animation-delay: 9s; 
+}
+.rw-words-1 div:nth-child(5) { 
+  -webkit-animation-delay: 12s; 
+	-ms-animation-delay: 12s; 
+	animation-delay: 12s; 
+}
+.rw-words-1 div:nth-child(6) { 
+  -webkit-animation-delay: 15s; 
+	-ms-animation-delay: 15s; 
+	animation-delay: 15s; 
+}
+
+@-webkit-keyframes rotateWord {
+  0% { opacity: 0; }
+  2% { opacity: 0; -webkit-transform: translateY(0px); }
+	5% { opacity: 1; -webkit-transform: translateY(0px);}
+  17% { opacity: 1; -webkit-transform: translateY(0px); }
+	20% { opacity: 0; -webkit-transform: translateY(30px); }
+	80% { opacity: 0; }
+  100% { opacity: 0; }
+}
+@-ms-keyframes rotateWord {
+  0% { opacity: 0; }
+  2% { opacity: 0; -ms-transform: translateY(-30px); }
+	5% { opacity: 1; -ms-transform: translateY(0px);}
+  17% { opacity: 1; -ms-transform: translateY(0px); }
+	20% { opacity: 0; -ms-transform: translateY(30px); }
+	80% { opacity: 0; }
+  100% { opacity: 0; }
+}
+@keyframes rotateWord {
+  0% { opacity: 0; }
+  2% { opacity: 0; -webkit-transform: translateY(-30px); transform: translateY(-30px); }
+	5% { opacity: 1; -webkit-transform: translateY(0px); transform: translateY(0px);}
+  17% { opacity: 1; -webkit-transform: translateY(0px); transform: translateY(0px); }
+	20% { opacity: 0; -webkit-transform: translateY(30px); transform: translateY(30px); }
+	80% { opacity: 0; }
+  100% { opacity: 0; }
+}
+/* end rotate words for teen stats */
+/* end teen-stats section*/
+
+/* youth-programs section */
+#youth-programs {
+	margin-top: 7em;
+}
+#youth-programs li {
+	display: inline-block;
+	vertical-align: top;
+	line-height: 2.5em;
+	width: 35%;
+	height: 22em;
+	min-width: 20em;
+	margin-bottom: 1.5em;
+	margin-right: 1em;
+	position: relative;
+	color: white;
+	border-radius: 6px;
+}
+#youth-programs li img {
+	width: 100%;
+	height: 20em;
+}
+#youth-programs li p {
+	background-color: rgba(0,0,0,.75);
+}
+
+/* start flip for youth-programs */
+.card-container {
+  height: 20em;
+  perspective: 600;
+  position: relative;
+  width: 100%;
+}
+.card {
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: all 1s ease-in-out;
+  width: 100%;
+}
+.card:hover {
+  transform: rotateY(180deg);
+}
+.card .side {
+  backface-visibility: hidden;
+  height: 20em;
+  position: absolute;
+  width: 100%;
+ }
+ .card .front p {
+	background-color: rgba(0,0,0,.65);
+	font-size: larger;
+}
+.card .back {
+  transform: rotateY(180deg);
+  color: white;
+  font-size: larger;
+  background-color: #353030;
+  height: 18.7em;
+  width: 100%;
+}
+.card .back p {
+	padding-top: .5em;
+}
+#youth-programs .back li {
+	color: white;
+  width: 100%;
+  font-size: smaller;
+  height: auto;
+  margin: 0;
+}
+.back-content {
+	padding-left: .5em;
+	padding-right: .5em;
+}
+.card hr {
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	color: #aaa;
+	margin-bottom: .5em;
+	margin-top: .3em;
+}
+.card .back-content a {
+	color: #158DA8;
+}
+/* end flip for youth-programs */
+@media only screen and (min-width: 0em) and (max-width: 50em) {
+	#youth-programs li {
+		width: 80%;
+	}
+}
+@media only screen and (min-width: 50em) and (max-width: 80em) {
+	#youth-programs li {
+		width: 55%;
+	}
+
+}
+
+/* end youth-programs section */
+
+/* courses section */
+#courses img {
+	max-width: 10em;
+	width: 90%;
+}
+#courses > div {
+	display: inline-block;
+	width: 25%;
+	padding: .5em 1em;
+	vertical-align: top;
+	margin-bottom: 7em; 
+}
+#courses #javascript {
+	background: url(../images/javascript.gif);
+	background-size: 30%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#courses #htmlcss {
+	background: url(../images/html_css.gif);
+	background-size: 30%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#courses #ruby {
+	background: url(../images/ruby.gif);
+	background-size: 30%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#courses #leadership {
+	background: url(../images/leadership.gif);
+	background-size: 30%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#courses #life-skills {
+	background: url(../images/life_skills.gif);
+	background-size: 30%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#courses #self-esteem {
+	background: url(../images/self_esteem.gif);
+	background-size: 30%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#courses p {
+	position: relative;
+	top: 5em;
+}
+#courses a:hover, #youth-programs a:hover {
+	color: blue;
+}
+/* end courses section */
+
+/* Button controls*/
+#btnDonate, #btnVolunteer{
+	width: 20%;
+	height: 2.75em;
+	padding-top: 3px;
+	margin-left: 2%;
+	border-radius: .75em;
+	position: absolute;
+	background-color: rgba(184,134,11,.75);
+}
+#btnDonate a, #btnVolunteer a{
+color: white;
+font-size: 1.45em;
+font-weight: bold;
+}
+#btnDonate a:hover, #btnVolunteer a:hover{
+color: firebrick;
+}
+#btnDonate:hover, #btnVolunteer:hover{
+	background-color: rgb(184,134,11);
+}
+#btnDonate {
+	margin-top: 5em;
+	margin-left: 13.5%;
+	border: 2px outset darkgrey;
+}
+#btnVolunteer {
+	margin-top: 7.5em;
+	margin-left: 13.85%;
+	border: 2px outset darkgrey;
+}
+
+/* about-us section */
+#aboutUsTitle, #donateTitle, #volTitle, #contactUsTitle {
+	font-size: 2em;
+}
+#aboutUsTitle {
+	text-align: center;
+}
+#about-us {
+	width: 40%;
+	margin-left: 4%;
+	font-size: .75em;
+	font-weight: normal;
+}
+#aboutUsInfo {
+	text-align: justify;
+}
+#about-us a:hover, #contact-us a:hover {
+	color: blue;
+}
+/* end about-us section*/
+#about-us, #donate, #volunteer{
+	border: 2px inset darkgrey;
+	font-size: 1em;
+	background-color: white;
+}
+
+/*Donate & volunteer sections*/
+#donate, #volunteer {
+	width: 45%;
+	margin-right: 4%;
+	float: right;
+	font-weight: normal;
+}
+#donate{
+	margin-top: 1.5%;
+}
+#volunteer {
+	margin-top: 100px;
+	margin-left: 200px;
+}
+#donateTitle, #volTitle {
+	width: 45%;
+	margin-left: 30%;
+	background-color: 192,192,192;
+	}
+#donateDescript, #volDescript {
+	width: 100%;
+	height: 100%;
+	float: right;
+	text-align: justify;
+	}
+
+/* contact-us section */
+#contact-us {
+	width: 40%;
+	margin-top: 8em;
+	margin-bottom: 6em;
+	margin-right: auto;
+	margin-left: auto;
+	border: 2px outset darkgrey;
+	text-align: center;
+	background-color: white;
+}
+#address {
+	font-size: 1em;
+	font-weight: normal;
+}
+hr {
+	width: 40%;
+	margin-left: 30%;
+}
+.contactLink {
+	color: blue;
+}
+.contactLink:hover {
+	color: darkviolet;
+	font-weight: bold;
+}
+
+
+
+

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="">
+<head>
+	<title>TTH Volunteer Sign-Up Page</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" media="all" href="css/volunteer.css">
+	<script src="libs/jquery-2.1.1.min.js"></script>
+</head>
+
+<body>
+
+	<div class='container'>
+
+		<img src='images/logo.png'  id='logo' width='150' />
+		<nav id="nav" class='nav'>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="index.html/#courses">Courses</a></li>
+				<li><a href="index.html/#about-us">About Us</a></li>
+				<li><a href="contactUs.html">Contact Us</a></li>
+				<li><a href="donate.html">Donate</a></li>
+			</ul>
+		</nav>
+
+		<!-- volunteer questionaire -->
+		<section id = 'volunteerHead' class = 'margin-top-med'>
+			<p id='intro'>WELCOME! This is the Tean Tech Hub Volunteer page &amp; thanks for joining us. Please fill out this brief questionaire so that we can determine how to best utilize your participation.
+			<br>
+			<br>
+			Once completed, just click the submit button at the bottom and one of our staff members will contact you about joining out team
+			<br>
+			<br>
+			Thank-you again for your support...
+		</p>
+		</section>
+
+		<section id = 'volunteerBody' class = 'margin-top-med'>
+			<div id = 'questionTopLable'>Introduce Yourself To Us:</div> <form action = 'http://www.teehtechhub.org/volunteer.py' method = 'post'>
+
+			<p class = 'formInfo'>Your First Name:<input type = 'text' name = 'firstName' size = '60' maxlength = '20' placeholder='"Johnny" or "Amy"' required/></p>
+			<br>
+			<p class = 'formInfo'>Your Last Name:<input type = 'text' name = 'lastName' size = '60' maxlength = '20' placeholder='"Smith" or "Jones"' required/></p>
+			<br>
+			<p class = 'formInfo'>Your email address:<input type = 'text' name = 'email' size = '60' maxlength = '50'	placeholder='"Joe HotSpot@gmail/yahoo/hotmail.com"' required/></p>
+			<br>
+			<div id = 'comBox'>
+				<p id = 'describe'>Tell us something about you:</p>
+				<textarea name = 'comment' required>What should we know about you?</textarea>
+			</div>
+			<br>
+			<div id = 'choices'>
+			<p id = 'volLabel'>How would you like to volunteer?</p>
+			<select name = 'duties'>
+				<option value = 'mentor'>Be a mentor</option>
+				<option value = 'teach'>Teach coding</option>
+				<option value = 'facilitate'>Facilitate workshops</option>
+				<option value = 'career'>Career counseling</option>
+				<option value = 'bootcamps'>Facilitate TTH Boot Camps</option>
+				<option value = 'hackDays'>Organize TTH Hack Days</option>
+				<option value = 'whatever'>Any way I can help...</option>
+			</select> 
+		</div>
+			<br>
+
+			<div id = 'btnSubmit'>
+				<p>Have you finished filling out this form? Please click on the "Submit Information".</p>
+				<input type = 'submit' name = 'submit' value = 'Submit Information' />
+			</div>
+
+		</form>
+		</section>
+
+		<!-- contact-us section -->
+		<section id="contact-us" class="margin-top-med">
+			<h2 id='contactTitle'>Contact Us</h2>
+			<address class="lead">
+				Teen Tech Hub<br>
+				1981 Landings Drive<br>
+				Building K<br>
+				Richmond, CA 94043<br>
+				USA<br>
+				<br>
+				(800) TEEN-TEK<br>
+				<a href="mailto:support@teentechhum.org">support@teentechhub.org</a><br>
+				
+				<address>
+				</section> <!-- end contact-us section-->
+			
+
+			<footer>
+			</footer>
+
+		</div>				
+
+		<script type="text/javascript" src="scripts/main.js"></script>
+	</body>
+	</html>

@@ -1,8 +1,0 @@
-Hey man, can you send the following to Steve? We were trying to figure this out yesterday:
-
-You are only scrolling the height of your element. offset() returns the coordinates of an element relative to the document, and top param will give you the element's distance in pixels along the y-axis:
-
-$("html, body").animate({ scrollTop: $('#title1').offset().top }, 1000);
-And you can also add a delay to it:
-
-$("html, body").delay(2000).animate({scrollTop: $('#title1').offset().top }, 2000);

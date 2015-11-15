@@ -1,0 +1,233 @@
+@-moz-viewport { width: device-width; scale: 1; }
+@-ms-viewport { width: device-width; scale: 1; }
+@-o-viewport { width: device-width; scale: 1; }
+@-webkit-viewport { width: device-width; scale: 1; }
+@viewport { width: device-width; scale: 1; }
+
+* {
+	/*outline: red 1px solid;*/
+	padding: 0;
+	margin: 0;
+}
+
+/*grid layout*/
+.margin-top-sm {
+	margin-top: .5em;
+}
+.margin-bottom-sm {
+	margin-bottom: .5em;
+}
+.margin-top-med {
+	margin-top: 2em;
+}
+.margin-bottom-med {
+	margin-bottom: 2em; 
+}
+.margin-top-lg {
+	margin-top: 3em;
+}
+.margin-bottom-lg {
+	margin-bottom: 3em;
+}
+.padding-top-med {
+	padding-top: 2em;
+}
+.padding-bottom-med {
+	padding-bottom: 2em;
+}
+.padding-top-sm {
+	padding-top: .5em;
+}
+.padding-bottom-sm {
+	padding-bottom: .5em;
+}
+.width-med {
+	width: 50%;
+}
+.center {
+	margin-right: auto;
+	margin-left: auto;
+}
+.lead {
+	font-size: 150%;
+}
+.heading {
+	color: #212121;
+	font-size: 300%;
+}
+.container {
+	position: relative;
+}
+/*end grid layout*/
+
+/*container controls*/
+html, body {
+	max-width: 110em;
+	min-width: 30em;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	font: 100%/1.5 Helvetica;
+	color: #353030;
+	background: linear-gradient(to left, rgba(0, 0, 0, .95), rgba(0, 0, 0, 0));
+}
+
+/*navbar controls*/
+a {
+	font-weight: bold;
+	text-decoration: none;
+}
+a:hover {
+	color: rgb(128,0,0);
+}
+nav {
+	height: 3em;
+	line-height: 3em;
+	position: absolute;
+	right: 25em;
+	width: 50%;
+	z-index: 1;
+	background-color: rgba(184,134,11,.5);
+	top: 0;
+}
+nav a {
+	color: white;
+}
+nav ul > li {
+	padding-left: 1.5em;
+	padding-right: 1.5em;
+	display: inline-block;
+}
+/* end nav */
+
+#logo {
+	width: 13%;
+	position: absolute;
+	right: 2%;
+	
+}
+
+/*form controls*/
+#volunteerHead, #volunteerBody {
+	margin-top: 3em;
+	margin-left: 1em;
+	color: black;
+}
+#intro {
+	width: 40em;
+	margin-top: 6.5em;
+	padding: 1%;
+	border: solid 2px;
+	position: absolute;
+	text-align: justify;
+	background-color: rgba(184,134,11,.5);
+}
+#questionTopLable {
+	position: absolute;
+	margin-top: 20em;
+}
+form {
+	width: 100%;
+	position: absolute;
+	margin-top: 22.5em;
+	text-align: left;
+}
+.formInfo {
+	width: 170px;
+	height: 2em;
+	margin: 0px 2px 0px 5px;
+	padding-top: 5px;
+	text-align: center;
+	background-color: rgba(184,134,11,.5);
+}
+#volLabel {
+	width: 250px;
+	height: 2em;
+	margin: 0px 2px 0px 5px;
+	text-align: center;
+	padding-top: 5px;
+	background-color: rgba(184,134,11,.5);
+}
+#describe {
+	width: 250px;
+	height: 2em;
+	padding-top: 5px;
+	text-align: center;
+	background-color: rgba(184,134,11,.5);
+}
+input {
+	width: 30em;
+	height: 1.8em;
+	margin-bottom: 2px;
+	position: absolute;
+	left: 11.5%;
+	color: black;
+	background-color: rgba(255,255,255, .75);
+	font-size: inherit;	
+}
+#comBox {
+width: 43em;
+height: 15em;
+position: absolute;
+left: 52em;
+bottom: 6.25em;
+}
+textarea {
+width: 51.25em;
+height: 16em;
+border: 2px inset;
+background-color: white;
+}
+#btnSubmit{
+	position: absolute;
+	margin-top: 7.5em;
+	
+}
+input[type="submit"] {
+  -webkit-appearance: button;
+  width: 10em;
+  height: 2em;
+  color: black;
+  margin-top: 1em;
+  margin-left: 7em;
+  border-style: none;
+  border-radius: .75em;
+  background-color: rgba(184,134,11,.85);
+}
+input[type="submit"]:hover{
+	color: darkred;
+	font-weight: bold;
+	background-color: goldenrod;
+}
+select{
+	width: 19em;
+	height: 2em;
+	color: black;
+	font-size: 1.1em;
+	border-style: inset;
+	background-color: rgba(184,134,11,.75);
+}
+option {
+	color: black;
+	background-color: white;
+}
+/*end form controls*/
+
+/* contact-us section */
+#contact-us {
+	width: 20em;
+	height: 15em;
+	position: absolute;
+	top: 37em;
+	right: 15.5%;
+	border: 4px inset;
+	font-weight: bold;
+	background-color: rgba(184,134,11,.5);
+}
+.lead {
+	font-size: 1em;
+	text-align: left;
+}
+.lead a:hover {
+	color: rgba(0,0,0, .65);

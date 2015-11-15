@@ -1,0 +1,227 @@
+@-moz-viewport { width: device-width; scale: 1; }
+@-ms-viewport { width: device-width; scale: 1; }
+@-o-viewport { width: device-width; scale: 1; }
+@-webkit-viewport { width: device-width; scale: 1; }
+@viewport { width: device-width; scale: 1; }
+
+* {
+	/*outline: red 1px solid;*/
+	padding: 0;
+	margin: 0;
+}
+
+/*grid layout*/
+.margin-top-sm {
+	margin-top: .5em;
+}
+.margin-bottom-sm {
+	margin-bottom: .5em;
+}
+.margin-top-med {
+	margin-top: 2em;
+}
+.margin-bottom-med {
+	margin-bottom: 2em; 
+}
+.margin-top-lg {
+	margin-top: 3em;
+}
+.margin-bottom-lg {
+	margin-bottom: 3em;
+}
+.padding-top-med {
+	padding-top: 2em;
+}
+.padding-bottom-med {
+	padding-bottom: 2em;
+}
+.padding-top-sm {
+	padding-top: .5em;
+}
+.padding-bottom-sm {
+	padding-bottom: .5em;
+}
+.width-med {
+	width: 50%;
+}
+.center {
+	margin-right: auto;
+	margin-left: auto;
+}
+.lead {
+	font-size: 150%;
+}
+.heading {
+	color: #212121;
+	font-size: 300%;
+}
+.container {
+	position: relative;
+}
+/*end grid layout*/
+
+/*container controls*/
+html, body {
+	max-width: 110em;
+	min-width: 30em;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	font: 100%/1.5 Helvetica;
+	color: #353030;
+	background: linear-gradient(to left, rgba(0, 0, 0, .95), rgba(0, 0, 0, 0));
+}
+
+/*navbar controls*/
+a {
+	font-weight: bold;
+	text-decoration: none;
+	}
+a:hover {
+	color: rgb(128,0,0);
+}
+nav a {
+	color: white;
+}
+nav {
+	width: 50%;
+	height: 3em;
+	position: absolute;
+	right: 25em;
+	line-height: 3em;
+	z-index: 1;
+	border: 2px outset darkgray;
+	background-color: rgba(184,134,11,.5);
+	top: 0;
+}
+nav ul > li {
+	padding-left: 1.5em;
+	padding-right: 1.5em;
+	display: inline-block;
+}
+/* end nav */
+
+#logo {
+	width: 13%;
+	position: absolute;
+	right: 2%;	
+}
+#intro {
+	width: 40em;
+	margin-top: 6.5em;
+	margin-left: 2%;
+	padding: 1%;
+	border: inset 2px darkgrey;
+	position: absolute;
+	text-align: justify;
+	background-color: rgba(184,134,11,.5);
+}
+
+/*form controls*/
+form {
+	width: 100%;
+	height: 25em;
+	position: absolute;
+	margin-top: 22.5em;
+	text-align: left;
+}
+#infoBoxLeft{
+	width: 38%;
+	margin-top: 5%;
+	margin-left: 2%;
+	float: left;
+}
+#infoBoxRight {
+	width: 58%;
+	margin-top: 10.5em;
+	margin-right: 2%;
+	float: right;
+}
+#formTitle {
+	width: 30em;
+	height: 3em;
+	margin-left: 85%;
+	margin-bottom: 2em;
+	padding-top: 1.5em;
+	border: 2px outset darkgrey;
+	text-align: center;
+	background-color: rgba(184,134,11,.5);
+}
+#fNameLabel, 
+#lNameLabel,
+#emailLabel,
+#volLabel,
+#cardLabel,
+#expireLabel,
+#securityLabel,
+#amountLabel {
+	width: 15em;
+	height: 1.5em;
+	border: 2px outset darkgray;
+	padding-top: 3px;
+	background-color: rgba(184,134,11,.5);
+}
+#fNameInput,
+#lNameInput,
+#emailInput,
+#paymentInput,
+#cardNumberInput,
+#expireInput,
+#securityInput, 
+#amountlInput {
+	width: 25em;
+	height: 2.15em;
+	border: 3px inset darkgrey;
+	background-color: white;
+}
+
+#btnSubmit{
+	margin-bottom: 5%;
+	padding-top: 3px;
+	position: absolute;
+	bottom: -18em;
+	right: 39.5%;
+}
+#btnSubmit p{
+	width: 20em;
+  border: 2px inset darkgrey;
+  background-color: rgba(184,134,11,.5);
+	
+}
+input[type="submit"] {
+  -webkit-appearance: button;
+  width: 12em;
+  height: 2.5em;
+  color: black;
+  margin-top: 1em;
+  margin-left: 4.5em;
+  border-style: outset;
+  border-color: darkgrey;
+  border-radius: .75em;
+  font-size: 1em;
+  background-color: rgba(184,134,11,.75);
+}
+input[type="submit"]:hover{
+	color: darkred;
+	font-weight: bold;
+	background-color: goldenrod;
+}
+/*end form controls*/
+
+/* contact-us section */
+#contact-us {
+	width: 20em;
+	height: 15em;
+	position: absolute;
+	top: 34em;
+	right: 10.5%;
+	border: 4px inset;
+	font-weight: bold;
+	background-color: rgba(184,134,11,.5);
+}
+
+.lead {
+	font-size: 1em;
+	text-align: left;
+}
