@@ -4,8 +4,16 @@
 @-webkit-viewport { width: device-width; scale: 1; }
 @viewport { width: device-width; scale: 1; }
 
+@font-face {
+	font-family: montserrat;
+	src: url('fonts/Montserrat-Bold.ttf') format('opentype');
+}
+@font-face {
+	font-family: proximanova;
+	src: url('fonts/ProximaNova-Regular.otf') format('opentype');
+}
+
 * {
-	/*outline: red 1px solid;*/
 	padding: 0;
 	margin: 0;
 }
@@ -17,9 +25,9 @@ html, body {
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
-	font: 100%/1.5 Helvetica;
+	font: 20px/1.5 proximanova helvetica;
 	font-weight: bold;
-	color: #353030;
+	color: #565151;
 }
 a {
 	text-decoration: none;
@@ -44,7 +52,9 @@ input {
 	color: inherit;
 	font: inherit;
 }
+form {
 
+}
 textarea {
 	border-radius: 4px;
 	overflow: auto;
@@ -62,67 +72,21 @@ select {
 section {
 	margin-top: 3em; 
 }
-.btn {
-	display: inline-block;
-	padding: 6px 12px;
-	margin-bottom: 0;
-	font-size: 110%;
-	line-height: 1.42857143;
-	text-align: center;
-	white-space: nowrap;
-	vertical-align: middle;
-	-ms-touch-action: manipulation;
-	    touch-action: manipulation;
-	cursor: pointer;
-	-webkit-user-select: none;
-	   -moz-user-select: none;
-	    -ms-user-select: none;
-	        user-select: none;
-	background-image: none;
-	border: 1px solid transparent;
-	border-radius: 5px;
-	font: inherit;
-	color: inherit;
-}
-.btn-default {
-  color: inherit;
-  background-color: #fff;
-  border-color: #ccc;
-}
-.btn:focus,
-.btn:active:focus,
-.btn.active:focus,
-.btn.focus,
-.btn:active.focus,
-.btn.active.focus {
-  outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
-}
-.btn:hover,
-.btn:focus,
-.btn.focus {
-  color: #333;
-  text-decoration: none;
-}
-.btn:active,
-.btn.active {
-  background-image: none;
-  outline: 0;
-  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
-          box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
-}
-button:active {
-  box-shadow: 0 2px 0 #006599;
-  transform: translateY(3px);
-}
 .font-blue {
 	color: blue;
 }
 .font-white {
-	color: white;
+	color: white !important;
 }
-
+.font-aqua {
+	color: #158DA8;
+}
+.font-med {
+	font-size: 150%;
+}
+.font-lg {
+	font-size: 200%;
+}
 .margin-top-sm {
 	margin-top: .5em;
 }
@@ -136,10 +100,13 @@ button:active {
 	margin-bottom: 2em; 
 }
 .margin-top-lg {
-	margin-top: 3em;
+	margin-top: 4em;
 }
 .margin-bottom-lg {
-	margin-bottom: 3em;
+	margin-bottom: 4em;
+}
+.margin-top-xl {
+	margin-top: 7em;
 }
 .padding-top-med {
 	padding-top: 2em;
@@ -153,37 +120,99 @@ button:active {
 .padding-bottom-sm {
 	padding-bottom: .5em;
 }
+.padding-top-lg {
+	padding-top: 3em;
+}
+.padding-left-sm {
+	padding-left: .5em;
+}
+.padding-left-med {
+	padding-left: 2em;
+}
+.padding-left-lg {
+	padding-left: 3em;
+}
+.padding-right-sm {
+	padding-right: .5em;
+}
+.width-sm {
+	width: 35%;
+}
 .width-med {
 	width: 50%;
+}
+.width-lg {
+	width: 75%;
 }
 .center {
 	margin-right: auto;
 	margin-left: auto;
 }
+.text-center {
+	text-align: center;
+}
+.text-left {
+	text-align: left;
+}
+.text-right {
+	text-align: right;
+}
+.text-justify {
+	text-align: justify;
+}
+.text-indent-sm {
+	text-indent: 1em;
+}
 .lead {
 	font-size: 150%;
-
 }
 .heading {
-	color: #212121;
-	font-size: 250%;
+	font-family: montserrat;
+	color: #353030;
 }
+.active {
+	background-color: rgba(18,143,170,.5);
+}
+.clear-fix {
+	clear: both;
+}
+.uppercase {
+	text-transform: uppercase;
+}
+.underline {
+	text-decoration: underline;
+}
+.hidden {
+	display: none;
+}
+.show {
+	display: block;
+}
+.cursor-pointer {
+	cursor: pointer;
+}
+
+
+
 .container {
 	position: relative;
 }
 
+
+
+
+
 /* nav */
 nav {
-	height: 3em;
+	height: 2.9em;
 	line-height: 3em;
-	position: absolute;
+	background-color: white;
 	width: 100%;
 	z-index: 1;
-	background-color: rgba(6,6,6,.55);
 	top: 0;
-}
-nav a {
-	color: white;
+	color: black;
+	font-size: 80%;
+	letter-spacing: .5px;
 }
 nav ul > li {
 	padding-left: 1.5em;
@@ -191,55 +220,60 @@ nav ul > li {
 	display: inline-block;
 }
 
+
 /* end nav */
+
+
+
 
 /* header */
 /* parallax effects */
 #slide1 {
-	background-size: 100%;
-	background: linear-gradient(to left, rgba(0, 0, 0, .95), rgba(0, 0, 0, 0)), url(../images/banner.jpg) no-repeat fixed top / cover;
+	background: url(../images/banner_diff_kids.jpg) no-repeat fixed center / cover;
+	height: 22em;
+}
+#slide2 {
+	background: url(../images/banner_kid_learning_in_class.jpg) no-repeat fixed top / cover;
+	height: 22em;
 }
 /* end parallax effects */
 header {
 	padding-top: 4em;
 	padding-bottom: 4em;
 	height: auto;
-}
-header .game {
-	float: left;
-	padding-top: 20%;
-	padding-left: 5%;
-	width: 30%;
-	color: yellow;
-	font-size: 250%;
+	position: relative;
 }
 header img {
-	float: right;
-	vertical-align: middle;
-	width: 50%;
-	padding-right: 5%;
-	padding-top: 10%;
+	width: 20em;
+	position: relative;
+	top: 1em;
 }
-header button {
-  background-image: linear-gradient(#ff1, #fd3);
-  width: 100%;
-  padding: 5%;
-  border-radius: 8px;
-  font-size: 100%;
-  font-weight: bold;
-  cursor: pointer;
+header .overlay {
+	width: 65%;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	position: absolute;
+	background-color: rgba(0,0,0,.7);
+	height: 30em;
 }
-header button:active {
-  box-shadow: 0 2px 0 #006599;
-  transform: translateY(3px);
+.header-h1 {
+	min-width: 10em;
+	position: absolute;
+	bottom: 2em;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
 }
+
+
 /* end header */
 
-/* main */
-#main {
-height: 100%;
-background-color: rgba(0,0,0,.5);
-}
+
+
 /* teen-stats section */
 #teen-stats p {
 	width: 75%;
@@ -253,17 +287,16 @@ background-color: rgba(0,0,0,.5);
 	margin-left: auto; 
 	width: 100%;
 	overflow: hidden;
-	color: #353030;
 	-webkit-animation: rotateWord 18s linear infinite 0s;
 	-ms-animation: rotateWord 18s linear infinite 0s;
 	animation: rotateWord 18s linear infinite 0s;
 }
-.rw-words-1 div::before {
+/*.rw-words-1 div::before {
 	content: url(../images/bullet.gif);
 	position: relative;
 	bottom: 3px;
 	padding-right: .5em;
-}
+}*/
 
 .rw-words-1 div:nth-child(1) { 
   -webkit-animation-delay: 0s; 
@@ -301,132 +334,49 @@ background-color: rgba(0,0,0,.5);
   2% { opacity: 0; -webkit-transform: translateY(0px); }
 	5% { opacity: 1; -webkit-transform: translateY(0px);}
   17% { opacity: 1; -webkit-transform: translateY(0px); }
-	20% { opacity: 0; -webkit-transform: translateY(30px); }
+	20% { opacity: 0; -webkit-transform: translateY(0px); }
 	80% { opacity: 0; }
   100% { opacity: 0; }
 }
 @-ms-keyframes rotateWord {
   0% { opacity: 0; }
-  2% { opacity: 0; -ms-transform: translateY(-30px); }
+  2% { opacity: 0; -ms-transform: translateY(0px); }
 	5% { opacity: 1; -ms-transform: translateY(0px);}
   17% { opacity: 1; -ms-transform: translateY(0px); }
-	20% { opacity: 0; -ms-transform: translateY(30px); }
+	20% { opacity: 0; -ms-transform: translateY(0px); }
 	80% { opacity: 0; }
   100% { opacity: 0; }
 }
 @keyframes rotateWord {
   0% { opacity: 0; }
-  2% { opacity: 0; -webkit-transform: translateY(-30px); transform: translateY(-30px); }
+  2% { opacity: 0; -webkit-transform: translateY(0px); transform: translateY(0px); }
 	5% { opacity: 1; -webkit-transform: translateY(0px); transform: translateY(0px);}
   17% { opacity: 1; -webkit-transform: translateY(0px); transform: translateY(0px); }
-	20% { opacity: 0; -webkit-transform: translateY(30px); transform: translateY(30px); }
+	20% { opacity: 0; -webkit-transform: translateY(0px); transform: translateY(0px); }
 	80% { opacity: 0; }
   100% { opacity: 0; }
 }
 /* end rotate words for teen stats */
 /* end teen-stats section*/
+/* end header */
 
-/* youth-programs section */
-#youth-programs {
-	margin-top: 7em;
-}
-#youth-programs li {
-	display: inline-block;
-	vertical-align: top;
-	line-height: 2.5em;
-	width: 35%;
-	height: 22em;
-	min-width: 20em;
-	margin-bottom: 1.5em;
-	margin-right: 1em;
-	position: relative;
-	color: white;
-	border-radius: 6px;
-}
-#youth-programs li img {
-	width: 100%;
-	height: 20em;
-}
-#youth-programs li p {
-	background-color: rgba(0,0,0,.75);
+
+
+
+/* affiliations section */
+#affiliations img {
+	height: 3em;
 }
 
-/* start flip for youth-programs */
-.card-container {
-  height: 20em;
-  perspective: 600;
-  position: relative;
-  width: 100%;
-}
-.card {
-  height: 100%;
-  position: absolute;
-  transform-style: preserve-3d;
-  transition: all 1s ease-in-out;
-  width: 100%;
-}
-.card:hover {
-  transform: rotateY(180deg);
-}
-.card .side {
-  backface-visibility: hidden;
-  height: 20em;
-  position: absolute;
-  width: 100%;
- }
- .card .front p {
-	background-color: rgba(0,0,0,.65);
-	font-size: larger;
-}
-.card .back {
-  transform: rotateY(180deg);
-  color: white;
-  font-size: larger;
-  background-color: #353030;
-  height: 18.7em;
-  width: 100%;
-}
-.card .back p {
-	padding-top: .5em;
-}
-#youth-programs .back li {
-	color: white;
-  width: 100%;
-  font-size: smaller;
-  height: auto;
-  margin: 0;
-}
-.back-content {
-	padding-left: .5em;
-	padding-right: .5em;
-}
-.card hr {
-	width: 50%;
-	margin-left: auto;
-	margin-right: auto;
-	color: #aaa;
-	margin-bottom: .5em;
-	margin-top: .3em;
-}
-.card .back-content a {
-	color: #158DA8;
-}
-/* end flip for youth-programs */
-@media only screen and (min-width: 0em) and (max-width: 50em) {
-	#youth-programs li {
-		width: 80%;
-	}
-}
-@media only screen and (min-width: 50em) and (max-width: 80em) {
-	#youth-programs li {
-		width: 55%;
-	}
+/* end affiliations section */
 
-}
 
-/* end youth-programs section */
+
 
 /* courses section */
+#courses {
+	background-color: rgba(21, 141, 168, 0.05);
+}
 #courses img {
 	max-width: 10em;
 	width: 90%;
@@ -434,166 +384,242 @@ background-color: rgba(0,0,0,.5);
 #courses > div {
 	display: inline-block;
 	width: 25%;
-	padding: .5em 1em;
 	vertical-align: top;
-	margin-bottom: 7em; 
+	margin-right: 1em;
+	margin-left: 1em;
+	margin-bottom: 5em;
 }
-#courses #javascript {
-	background: url(../images/javascript.gif);
-	background-size: 30%;
-	background-repeat: no-repeat;
-	background-position: center;
+#courses .courses-heading {
+	min-width: 20em;
 }
-#courses #htmlcss {
-	background: url(../images/html_css.gif);
-	background-size: 30%;
-	background-repeat: no-repeat;
-	background-position: center;
+#courses .courses-heading p:first-child {
+	line-height: 3em;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
 }
-#courses #ruby {
-	background: url(../images/ruby.gif);
-	background-size: 30%;
-	background-repeat: no-repeat;
-	background-position: center;
+#courses .bg-blue {
+	background-color: #158DA8;
 }
-#courses #leadership {
-	background: url(../images/leadership.gif);
-	background-size: 30%;
-	background-repeat: no-repeat;
-	background-position: center;
+#courses .bg-green {
+	background-color: #6FBC43;
 }
-#courses #life-skills {
-	background: url(../images/life_skills.gif);
-	background-size: 30%;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-#courses #self-esteem {
-	background: url(../images/self_esteem.gif);
-	background-size: 30%;
-	background-repeat: no-repeat;
-	background-position: center;
+#courses .bg-yellow {
+	background-color: #DDCE1F;
 }
 
-#courses p {
-	position: relative;
-	top: 5em;
-}
-#courses a:hover, #youth-programs a:hover {
-	color: blue;
-}
 /* end courses section */
 
-/* Button controls*/
-#btnDonate, #btnVolunteer{
-	width: 20%;
-	height: 2.75em;
-	padding-top: 3px;
-	margin-left: 2%;
-	border-radius: .75em;
-	position: absolute;
-	background-color: rgba(184,134,11,.75);
-}
-#btnDonate a, #btnVolunteer a{
-color: white;
-font-size: 1.45em;
-font-weight: bold;
-}
-#btnDonate a:hover, #btnVolunteer a:hover{
-color: firebrick;
-}
-#btnDonate:hover, #btnVolunteer:hover{
-	background-color: rgb(184,134,11);
-}
-#btnDonate {
-	margin-top: 5em;
-	margin-left: 13.5%;
-	border: 2px outset darkgrey;
-}
-#btnVolunteer {
-	margin-top: 7.5em;
-	margin-left: 13.85%;
-	border: 2px outset darkgrey;
-}
 
-/* about-us section */
-#aboutUsTitle, #donateTitle, #volTitle, #contactUsTitle {
-	font-size: 2em;
+
+/* courses-info section */
+#courses-info .courses-container {
+	width: 90%;
 }
-#aboutUsTitle {
-	text-align: center;
+#courses-info p {
+	display: inline-block;
+	width: 30%;
+	vertical-align: top;
+	padding: 1em .9em;
+	text-align: justify;
+	min-width: 15em;
 }
-#about-us {
+/* end courses-info section*/
+
+
+
+/* youth-programs section */
+#youth-programs {
+	background-color: rgba(21, 141, 168, 0.05);
+}
+.program-nav hr {
+	width: 75%;
+	border-color: rgba(208, 208, 208, 0.25);
+}
+.program-nav ul {
+	margin-top: -.1em;
+}
+.program-nav li {
+	display: inline-block;
+	padding-left: 1em;
+	padding-right: 1em;
+	font-size: 80%;
+	line-height: 3em;
+	color: #353030;
+}
+.programs-container {
+	width: 80%;
+	height: 30em;
+}
+.prog-image {
 	width: 40%;
-	margin-left: 4%;
-	font-size: .75em;
-	font-weight: normal;
+	display: block;
+	vertical-align: top;
 }
-#aboutUsInfo {
-	text-align: justify;
+.prog-image img {
+	width: 20em;
+	height: 12em;
+	border-radius: 6px;
 }
-#about-us a:hover, #contact-us a:hover {
-	color: blue;
+.prog-info {
+	width: 100%;
+	display: inline-block;
+	vertical-align: top;
 }
-/* end about-us section*/
-#about-us, #donate, #volunteer{
-	border: 2px inset darkgrey;
-	font-size: 1em;
-	background-color: white;
+.programs-container div > ul {
+	padding-left: 2em;
+	vertical-align: top;
+}
+.programs-container li:nth-child(n+2) {
+	line-height: 2em;
+}
+.prog-bootcamp .prog-info table td, 
+.prog-seminar .prog-info table td,
+.prog-hack .prog-info table td,
+.prog-mentor .prog-info table td {
+	height: 2.5em;
+	padding-left: 2em;
+	padding-right: 2em;
+}
+.prog-bootcamp table,
+.prog-seminar table,
+.prog-hack table, 
+.prog-mentor table {
+	border-collapse: collapse;
+}
+.prog-seminar .prog-info table td {
+	height: 1.8em;
+}
+.prog-seminar > .prog-info thead td {
+	border-bottom: 2px solid rgba(208, 208, 208, 0.25);
+}
+.prog-seminar > .prog-info table td:first-child {
+	text-align: left;
+	width: 6em;
+}
+.prog-career .prog-info li,
+.prog-hire .prog-info li {
+	display: inline-block;
+	width: 45%;
+	vertical-align: top;
+}
+.prog-career li p,
+.prog-hire .prog-info p {
+	line-height: 2em;
 }
 
-/*Donate & volunteer sections*/
-#donate, #volunteer {
-	width: 45%;
-	margin-right: 4%;
-	float: right;
-	font-weight: normal;
-}
-#donate{
-	margin-top: 1.5%;
-}
-#volunteer {
-	margin-top: 100px;
-	margin-left: 200px;
-}
-#donateTitle, #volTitle {
-	width: 45%;
-	margin-left: 30%;
-	background-color: 192,192,192;
-	}
-#donateDescript, #volDescript {
-	width: 100%;
-	height: 100%;
-	float: right;
-	text-align: justify;
-	}
+/* end youth-programs section */
+
+
+
+
 
 /* contact-us section */
 #contact-us {
-	width: 40%;
-	margin-top: 8em;
-	margin-bottom: 6em;
+	margin-top: 3em;
+	text-align: center;
 	margin-right: auto;
 	margin-left: auto;
-	border: 2px outset darkgrey;
-	text-align: center;
-	background-color: white;
 }
-#address {
-	font-size: 1em;
-	font-weight: normal;
+#contact-us .contactus-form {
+	margin-right: auto;
+	margin-left: auto;
+	max-width: 50em;
+	min-width: 20em;
+	border-style: outset;
+	border-radius: 1em;
+	background-color: #B9D3EA;
 }
-hr {
-	width: 40%;
-	margin-left: 30%;
+#contact-us input {
+	width: 50%;
+	min-width: 15em;
 }
-.contactLink {
+#contact-us .contactus-form label {
+	display: block;
+	padding-bottom: .3em;
+}
+#contact-us .contactus-form .form-group {
+	margin-bottom: 1em;
+}
+#contact-us textarea {
+	width: 75%;
+	min-width: 15em;
+	font: inherit;
+	color: inherit;
+}
+#contact-us address a {
 	color: blue;
 }
-.contactLink:hover {
-	color: darkviolet;
-	font-weight: bold;
+/* end contact-us section */
+/* end main */
+
+
+
+.game-container {
+	background-color: #9CD6E4;
 }
+#game {
+	margin-top: 0;
+}
+#slide3 {
+	background: url(../images/game3.jpg) no-repeat fixed top / cover;
+	height: 30em;
+}
+#game header .overlay {
+	width: 65%;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	position: absolute;
+	background-color: rgba(0,0,0,.7);
+}
+#game .game-instructions tr {
+	height: 2em;
+}
+#game .game-instructions td {
+	padding-left: 2em;
+	padding-right: 2em;
+}
+#game .btn-game {
+	height: 2em;
+	width: 8em;
+	border-radius: 10px;
+	border: 0;
+	background-image: linear-gradient(#ff1, #fd3);
+}
+#game .btn-game:active {
+	transform: translateY(3px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* footer */
+
+/* end footer */
+
+
+
+
+
 
 
 
