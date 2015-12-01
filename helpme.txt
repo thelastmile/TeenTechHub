@@ -1,3 +1,0 @@
-I need help with the game. I'm having a problem getting the character to move smoothly. I hit the arrow key and hold it down, she moves once, but then there is a lag until the next move, then it's fine. How do I get that second move to be move, rather than delaying.
-
-Recreate by holding down either left or right arrow keys. Notice the lag in between the first move and the second.
