@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="">
+<head>
+	<title>TTH - Volunteer</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" media="all" href="../css/main.css">
+	<script src="../libs/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="../scripts/main.js"></script>
+</head>
+
+
+<body>
+
+	<div class='container'>
+
+		<div id="volunteers-header">
+			<nav>
+				<input type="checkbox" class="nav-check" id="nav-check">
+				<label class="nav-label" for="nav-check">Navigate</label>
+				<ul class="nav">
+					<li class=""><a href="../index.html" class="uppercase">Home</a></li>
+					<li><a href="../index.html#courses" class="uppercase">Courses</a></li>
+					<li><a href="youth_programs.html" class="uppercase">Programs</a></li>
+					<li class="active"><a href="#" class="uppercase">Donate</a></li>
+					<li><a href="volunteer.html" class="uppercase">Volunteer</a></li>
+					<li><a href="about_us.html" class="uppercase">About Us</a></li>
+					<li><a href="contact_us.html" class="uppercase">Contact Us</a></li>
+				</ul>
+			</nav>
+			<header id="donate-slide" class="homeSlide">
+				<div class='overlay'>
+					<img src='../images/logo.png' id='logo' width='150' />
+					<h1 class="header-h1 uppercase font-white heading font-lg margin-top-sm width-med center">Donate and help create future leaders</h1>
+				</div>
+			</header>
+		</div>
+
+
+		<main class="padding-top-med">
+			<section id="donate">
+				<div class="donate-images margin-bottom-med">
+					<p class='center width-lg heading lead'>Your Teen Tech Hub Donation contributes to a 501(c)(3) non-profit organization.</p>
+					<p class="width-lg heading lead center">Your donations are used to help young men and women fulfill their dreams.</p>
+
+					<div class="image-container margin-top-lg">
+						<img src="../images/Hakim_Jackson.png" alt="" width="150" />
+						<p>"Without Teen Tech Hub, I don't know where my life would have lead." -- Hakim</p>
+					</div>				
+					<div class="image-container padding-top-med">
+						<img src="../images/Sharma_Umm.png" alt="" width="150" />
+						<p>"Teen Tech Hub gave me the self-esteem I needed to pursue college." -- Sharma</p>
+					</div>				
+					<div class="image-container padding-top-med">
+						<img src="../images/Tracie.png" alt="" width="150" />
+						<p>"I never thought that being a tech geek could be so fun and cool." -- Tracie</p>
+					</div>
+				</div>
+
+
+				<div class="donations padding-top-lg padding-bottom-sm">
+					<p class="donate-head lead width-lg center">With your donations, Teen Tech Hub will expand into more communities and widen our curriculum. Please donate today!</p>
+
+					<form class="donate-form center margin-bottom-lg margin-top-med">
+						<div class="form-group padding-right-med padding-left-med">
+							<div class="donate-field first-name margin-bottom-sm">
+								<label for="firstName">First Name</label>
+								<input type="text" name="firstName" value="" placeholder="Enter First Name" />
+							</div>			
+							<div class="donate-field last-name margin-bottom-sm">
+								<label for="lastName lead">Last Name</label>
+								<input type="text" name="lastName" value="" placeholder="Enter Last Name" />
+							</div>
+							<div class="clear-fix">
+							</div>
+							<div class="donate-field margin-bottom-sm">
+								<label for="email">Email</label>
+								<input type="email" name="email" value="" placeholder="Enter email address" />
+							</div>
+							<div class="donate-field margin-bottom-sm">
+								<label for="phone#">Phone Number <span class="font-sm">(optional)</span></label>
+								<input type="tel" name="phone" value="" placeholder="Enter phone number" />
+							</div>
+						</div>
+
+						<div class="form-group padding-left-med padding-right-med">
+							<div class="donate-field donation-amt margin-bottom-sm">
+								<label for="Donation-Amt">Amount</label>
+								<input type="text" name="Donation-Amt" value="" placeholder="Please make a donation" />
+							</div>
+							<div class="donate-field payment margin-bottom-sm">
+								<label for="cc-type">Credit Card Type</label>
+								<select name='payment' id='cc-type'>
+									<option value='amex'>American Express</option>
+									<option value='discover'>Discover</option>
+									<option value='mastercard'>MasterCard</option>
+									<option value='visa' selected>Visa</option>
+								</select>
+							</div>
+							<div class="donate-field margin-bottom-sm">
+								<label for="cc-num">Credit Card Number</label>
+								<input type="text" name="cc-num" value="" placeholder='8888-8888-8888-8888' maxlength="16" pattern="(\d){16}" required />
+							</div>
+							<div class="donate-field exp-date margin-bottom-sm">
+								<label for="exp-date">Expiration Date</label>
+								<input type="date" name="exp-date" value="" required />
+							</div>					
+							<div class="donate-field sec-code margin-bottom-sm">
+								<label for="sec-code">3 Digit Security Code</label>
+								<input type="text" name="sec-code" value="" placeholder="123" maxlength="3" pattern="(\d){3}" required />
+							</div>
+						</div>
+
+						<button class="submit margin-top-sm uppercase font-bold center" type="submit">Submit</button>
+
+					</form> <!-- end donate-form -->
+				</div> <!-- end .donations -->
+			</section>	<!-- end donate section -->
+
+
+			<!-- contact-us section -->
+			<section id="contact-us" class="margin-top-med width-lg margin-bottom-lg center">
+				<p class="lead heading center padding-bottom-med">Please  <a class="underline" href="contact_us.html">contact us</a> if you have any questions.</p>
+			</section> <!-- end contact-us section -->
+		</main>
+
+
+		<footer>
+			<p class="copyright font-sm">© 2015 Teen Tech Hub, LLC. All rights reserved</p>
+		</footer>
+
+	</div> <!-- end container -->
+
+
+
+
+</body>
+</html>
+
+
+
+
