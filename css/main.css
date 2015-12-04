@@ -12,6 +12,10 @@
 	font-family: proximanova;
 	src: url('fonts/ProximaNova-Regular.otf') format('opentype');
 }
+@font-face {
+	font-family: loveyalikeasister;
+	src: url('fonts/LoveYaLikeASister.ttf') format('opentype');
+}
 
 * {
 	padding: 0;
@@ -20,7 +24,7 @@
 
 html, body {
 	max-width: 110em;
-	min-width: 30em;
+	min-width: 15em;
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
@@ -149,14 +153,15 @@ section {
 }
 .width-sm {
 	width: 35%;
-	min-width: 20em;
+	min-width: 15em;
 }
 .width-med {
 	width: 50%;
-	min-width: 30em;
+	min-width: 15em;
 }
 .width-lg {
 	width: 75%;
+	min-width: 15em;
 }
 .center {
 	margin-right: auto;
@@ -214,10 +219,11 @@ section {
 .submit {
 	width: 8em;
 	height: 2em;
-	font-size: 1.5em;
-	background: rgb(219,205,31);
+	font-size: 1.2em;
+	background: #2B2C6D;
 	color: white;
 	border-radius: 6px;
+	border-color: #2B2C6D;
 }
 .bg-lightblue {
 	background-color: rgba(21, 141, 168, 0.05);
@@ -258,11 +264,12 @@ section {
 	color: white;
 }
 .nav-check {
-  position: absolute;
+  position: fixed;
   top: -3em;
 }
 .nav-check:checked ~ .nav {
   display: block;
+  position: fixed;
 }
 .nav-label {
   cursor: pointer;
@@ -270,7 +277,7 @@ section {
   display: inline-block;
   width: 40px;
   height: 40px;
-  position: absolute;
+  position: fixed;
   z-index: 1000;
   background-image: url("../images/nav-icon.svg");
   background-size: 40px auto;
@@ -302,15 +309,16 @@ section {
 }
 @media only screen and (min-width: 45em) {
 	.nav {
-		display: inline-block;
 		height: 2.9em;
 		line-height: 3em;
 		background-color: white;
+		display: inline-block;
+		position: fixed;
 		width: 100%;
-		z-index: 1;
-		top: 0;
+		left: 0;
 		font-size: 80%;
 		letter-spacing: .5px;
+		z-index: 10000;
 	}
 	.nav li:hover {
 		background-color: rgba(18,143,170,.5);
@@ -380,7 +388,19 @@ header .overlay {
 	left: 0;
 	right: 0;
 }
-
+header .play-game .play-info {
+  position: absolute;
+  bottom: -2em;
+  left: 1em;
+  width: 8em;
+  padding: 1em;
+  border-radius: 50%;
+  background-color: #2B2C6D;
+  transform: rotate(-30deg);
+}
+header .play-game a {
+	color: white;
+}
 
 /* end header */
 
@@ -389,7 +409,6 @@ header .overlay {
 /* teen-stats section */
 #teen-stats p {
 	width: 75%;
-	min-width: 25em;
 }
 /* rotate the words for teen stats */
 .rw-words-1 div{
@@ -503,7 +522,7 @@ header .overlay {
 	margin-bottom: 5em;
 }
 #courses .courses-heading {
-	min-width: 20em;
+	min-width: 15em;
 }
 #courses .courses-heading p:first-child {
 	line-height: 3em;
@@ -526,15 +545,20 @@ header .overlay {
 
 /* courses-info section */
 #courses-info .courses-container {
-	width: 90%;
+	width: 95%;
 }
 #courses-info p {
 	display: inline-block;
 	width: 30%;
+	min-width: 15em;
 	vertical-align: top;
 	padding: 1em 1em;
 	text-align: justify;
-	min-width: 20em;
+}
+@media only screen and (max-width: 60em) {
+	#courses-info p {
+		width: 95%;
+	}
 }
 /* end courses-info section*/
 
@@ -599,8 +623,9 @@ header .overlay {
 .prog-hack .prog-info table td,
 .prog-mentor .prog-info table td {
 	height: 2.5em;
-	padding-left: 2em;
-	padding-right: 2em;
+	padding-left: .5em;
+	padding-right: .5em;
+	padding-bottom: .5em;
 }
 .prog-bootcamp table,
 .prog-seminar table,
@@ -620,14 +645,34 @@ header .overlay {
 }
 .prog-career .prog-info li,
 .prog-hire .prog-info li {
-	display: inline-block;
-	width: 45%;
+	/*display: inline-block;*/
+	/*width: 45%;*/
 	vertical-align: top;
 }
 .prog-career li p,
 .prog-hire .prog-info p {
 	line-height: 2em;
 }
+
+@media only screen and (max-width: 30em) {
+	.prog-image img {
+		width: 15em;
+		height: 10em;
+	}
+}
+@media only screen and (min-width: 50em) {
+	.prog-career .prog-info li,
+	.prog-hire .prog-info li {
+		display: inline-block;
+		width: 45%;
+		padding-top: 1em;
+	}
+	.prog-career .prog-info li:first-child,
+	.prog-hire .prog-info li:first-child {
+		padding-right: 1em;
+	}
+}
+
 
 /* end youth-programs section */
 
@@ -637,7 +682,7 @@ header .overlay {
 
 /* contact-us section */
 #contact-us-slide {
-	background: url(../images/banner.jpg) no-repeat fixed bottom / cover;
+	background: url(../images/banner_hp.jpg) no-repeat fixed center / cover;
 	height: 22em;
 	top: 2em;
 }
@@ -707,7 +752,7 @@ header .overlay {
 #about-us > p {
 	display: inline-block;
 	width: 30%;
-	min-width: 25em;
+	min-width: 18em;
 	vertical-align: top;
 	text-align: justify;
 	margin-left: 1em;
@@ -765,7 +810,7 @@ header .overlay {
 #donate .donate-form .form-group {
 	display: inline-block;
 	width: 30%;
-	min-width: 25em;
+	min-width: 18em;
 	vertical-align: top;
 }
 #donate input {
@@ -777,6 +822,7 @@ header .overlay {
 	display: block;
 	margin-left:auto;
 	margin-right: auto;
+	width: 100%;
 }
 #donate .donate-form .exp-date,
 #donate .donate-form .sec-code,
@@ -800,6 +846,7 @@ header .overlay {
 #donate button.submit {
 	display: block;
 }
+
 /* end donate section */
 
 
@@ -818,16 +865,23 @@ header .overlay {
 
 /* start game section */
 .game-container {
-	background-color: #9CD6E4;
+	/*background-color: #9CD6E4;*/
 }
 #game {
 	margin-top: 0;
+	position: relative;
+	top: 2em;
 }
-#slide3 {
-	background: url(../images/game1.jpg) no-repeat fixed top / cover;
-	height: 30em;
+#game header {
+	padding-top: 0;
+	padding-bottom: 0;
 }
-#game header .overlay {
+#game-slide {
+	background: url(../images/game1.jpg) no-repeat fixed center / cover;
+	background-position: -20em -4em;
+	height: 24em;
+}
+.game-header header .overlay {
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
@@ -836,9 +890,7 @@ header .overlay {
 	top: 0;
 	position: absolute;
 	background-color: rgba(0,0,0,.5);
-}
-#game .game-instructions tr {
-	height: 2em;
+	height: 32em;
 }
 #game .game-instructions td {
 	padding-left: 2em;
@@ -847,9 +899,10 @@ header .overlay {
 #game .btn-game {
 	height: 2em;
 	width: 8em;
-	border-radius: 10px;
+	border-radius: 6px;
 	border: 0;
-	background-image: linear-gradient(#ff1, #fd3);
+	background-color: #FFEF22;
+	font-weight: bold;
 }
 #game .btn-game:active {
 	transform: translateY(3px);
@@ -857,8 +910,26 @@ header .overlay {
 #game-app .click-to-play {
 	width: 15em;
 }
-
-
+p.rileys-logo {
+	z-index: 1000;
+}
+p.rileys-gamename {
+	font-size: 2.5em;
+	font-family: loveyalikeasister;
+	color: orange;
+	display: inline-block;
+	vertical-align: top;
+	padding-top: .2em;
+}
+.bower-image {
+	width: 5em;
+	position: static;
+}
+@media only screen and (max-width: 30em) {
+	#game-slide {
+		top: 2em;
+	}
+}
 
 
 

@@ -12,13 +12,17 @@ $(function() {
 
 	});
 
-	// adjust the sizing on window.resize
-	$('#game .overlay').css('height', window.innerHeight);
+	// adjust the sizing on window.resize of the games 
+	// overlay and background
+	// $('#game .overlay, #game .homeSlide').css({
+	// 	height: document.body.scrollHeight - 40,
+	// });
 
-	$(window).resize(function(e) {
-		var $height = e.target.innerHeight;
-		$('#game .overlay').css('height', $height);
-	});
+	// $(window).resize(function(e) {
+	// 	$('#game .overlay').css({
+	// 		height: document.body.scrollHeight - 40,
+	// 	})
+	// });
 
 
 	// add class active to the active link on the navbar
@@ -36,6 +40,7 @@ $(function() {
 
 		$('.' + id).removeClass('hidden').addClass('prog-active');
 	})
+
 
 	// add class active to the active link on the prog-nav
 	$('.program-nav li').click(function() {
