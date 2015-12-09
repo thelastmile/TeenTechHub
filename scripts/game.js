@@ -151,20 +151,44 @@ runner.setRunnersPos = function() {
 
 // change the runners image to left or right
 runner.flipRunner = function(pos) {
+	var $runWay = $('#runner1');
+
 	if (runner.flipRunner.currPos !== pos) {
 		if (pos === 0) { // running right
-			$('#runner1').prop('src', '../images/runner_right_2.gif');
+			$runWay.prop('src', '../images/runner_right_2.gif');
 			runner.flipRunner.currPos = 0;
 		} else if (pos === 1) { // running left
-			$('#runner1').prop('src', '../images/runner_left_2.gif');
+			$runWay.prop('src', '../images/runner_left_2.gif');
 			runner.flipRunner.currPos = 1;
-		} else if (pos === 2) { // standing still right
-			$('#runner1').prop('src', '../images/runner2.gif');
+		} else if (pos === 2) {
+			$runWay.prop('src', '../images/runner_right_still.png');
 			runner.flipRunner.currPos = 2;
-		} 
-	}
+		}
+	} 
 };
 runner.flipRunner.currPos = 0;
+
+// change character image to non-running image
+runner.stopRunning = function() {
+	var $runWay = $('#runner1');
+
+	if (runner.flipRunner.currPos === 0) {
+		$runWay.prop('src', '../images/runner_right_still.png');
+	} else {
+		$runWay.prop('src', '../images/runner_left_still.png')
+	}
+}
+
+// change character image to running image
+runner.startRunning = function() {
+	var $runWay = $('#runner1');
+
+	if (runner.flipRunner.currPos === 0) {
+		$runWay.prop('src', '../images/runner_right_2.gif');
+	} else {
+		$runWay.prop('src', '../images/runner_left_2.gif');
+	}
+};
 
 // kill runner and restart game
 runner.die = function() {
@@ -211,7 +235,8 @@ runner.jumpRight = function(runnersPosition) {
 
 	runner.flipRunner(0);
 	game.hideClue();
-	
+	game.hideProblem();
+
 	$('.female-runner').animate({
 		top: "-=" + 35
 	}, 300)
@@ -233,6 +258,7 @@ runner.jumpLeft = function(runnersPosition) {
 
 	runner.flipRunner(1);
 	game.hideClue();
+	game.hideProblem();
 
 	$('.female-runner').animate({
 		top: "-=" + 35
@@ -256,6 +282,7 @@ runner.goDown = function() {
 		$runPos = parseInt($('.female-runner').css('top'));
 
 	game.hideClue();
+	game.hideProblem();
 
 	for (var i = 0; i < m.length; i++) {
 		var mi = m[i];
@@ -276,6 +303,7 @@ runner.goUp = function() {
 		$runPos = parseInt($('.female-runner').css('top'));
 
 	game.hideClue();
+	game.hideProblem();
 
 	for (var i = 0; i < m.length; i++) {
 		var mi = m[i];
@@ -296,7 +324,8 @@ runner.goRight = function() {
 		$runPos = parseInt($('.female-runner').css('top'));
 
 	runner.flipRunner(0);
-	game.hideClue();
+	game.hideClue();	
+	game.hideProblem();
 
 	for (var i = 0; i < m.length; i++) {
 		var mi = m[i];
@@ -309,6 +338,7 @@ runner.goRight = function() {
 			}, 10)
 
 			enemy.moveEnemiesLeft();
+			break;
 		}
 	}
 };
@@ -321,6 +351,7 @@ runner.goLeft = function() {
 
 	runner.flipRunner(1);
 	game.hideClue();
+	game.hideProblem();
 
 	for (var i = 0; i < m.length; i++) {
 		var mi = m[i];
@@ -332,6 +363,7 @@ runner.goLeft = function() {
 			}, 10)
 
 			enemy.moveEnemiesRight();
+			break;
 		}
 	}
 };
@@ -376,13 +408,23 @@ game.hideClue = function() {
 	for (var i = 0; i < $clues.length; i++) {
 		$clues.eq(i).hide();
 	}
+
+	if (game.clueShown === 1) {
+		enemy.startEnemyMovement();
+		game.clueShown = 0;
+	}
 };
+
+// need to determine if clue is shown to get enemies to stop moving,
+// or start moving
+game.clueShown = 0;
 
 // append the clue to .clue-area
 game.addClue = function(clueObj) {
 	var $topPos = parseInt($('.female-runner').css('top'));
 
 	game.hideClue();
+	enemy.stopEnemyMovement();
 
 	var alreadyExists = $('#' + clueObj.id);
 
@@ -399,6 +441,7 @@ game.addClue = function(clueObj) {
 	} else {
 		alreadyExists.show();
 	}
+	game.clueShown = 1;
 };
 
 // append clue to .clue-area
@@ -494,12 +537,20 @@ game.showProblem = function() {
 	$('.prob-area').show();
 	game.clearSolutionVal();
 	$('.solution').focus();
+
 	setTimeout(function() {
 		$('.solution').val('');
 	}, 10);
 
+	game.problemShown = 1;
+	enemy.stopEnemyMovement();
+
 	game.hideGameManager();
 };
+
+// add property to show if clue shown or not, so I know when
+// to stop/start enemy movement
+game.problemShown = 0;
 
 // hide .prob-area
 game.hideProblem = function() {
@@ -507,7 +558,29 @@ game.hideProblem = function() {
 	$('.problem').text('');
 
 	game.showGameManager();
+
+	if (game.problemShown === 1) {
+		enemy.stopEnemyMovement();
+		enemy.startEnemyMovement();
+		game.problemShown = 0;
+	}
 };
+
+// check the answer to see if it's correct, if not, display message
+game.checkProblemAnswer = function(value) {
+	if (value) {
+		value = value.replace(/[\']/gim, '"');
+		value = value.replace(/[\s;]/gim, "");
+	}
+
+	if (value === clues[gv.level].solution) {
+		game.increasePoints(100);
+		game.render();
+		$('.wrong-answer').hide();
+	} else {
+		$('.wrong-answer').show();
+	}
+}
 
 // changes the game image
 game.changeImage = function() {
@@ -656,18 +729,33 @@ game.pause = function() {
 		enemy.stopEnemyMovement();
 		$(window).off('keydown');
 		$(window).off('keyup');
+		runner.stopRunning();
+		$('#pause').text('Play');
 	} else {
 		enemy.startEnemyMovement();
+		runner.startRunning();		
 		$(window).on('keydown', function(e) {
 			game.keyDown(e)
 		});
 		$(window).on('keyup', function(e){
 			game.keyUp(e);
 		});
+		$('#pause').text('Pause');
 	}
 	game.pause.index++;
 }
 game.pause.index = 0;
+
+game.keys = {
+	arrowLeft: 37, // left direction key
+	key4: 100,
+	arrowRight: 39, // right direction key
+	key6: 102,
+	arrowUp: 38, // up direction key
+	key8: 104,
+	arrowDown: 40, // down direction key
+	key2: 98
+}
 
 // function to call when keydown event fires
 game.keyDown = function(eventObj) {
@@ -675,39 +763,39 @@ game.keyDown = function(eventObj) {
 		timestamp = eventObj.timeStamp,
 		timeDelta = eventObj.timeStamp - game.smoothMoves.time;
 
-	if (key === 37 || key === 100 & !game.smoothMoves.keyArrowLeft) {
+	if (key === game.keys.arrowLeft || key === game.keys.key4 & !game.smoothMoves.keyArrowLeft) {
 		game.smoothMoves.keyArrowLeft = true;
-	} else if (key === 39 || key === 102 & !game.smoothMoves.keyArrowRight) {
+	} else if (key === game.keys.arrowRight || key === game.keys.key6 & !game.smoothMoves.keyArrowRight) {
 		game.smoothMoves.keyArrowRight = true;
-	} else if (key === 38 || key === 104 & !game.smoothMoves.keyArrowUp) {
+	} else if (key === game.keys.arrowUp || key === game.keys.key8 & !game.smoothMoves.keyArrowUp) {
 		game.smoothMoves.keyArrowUp = true;
-	} else if (key === 40 || key === 98 & !game.smoothMoves.keyArrowDown) {
+	} else if (key === game.keys.arrowDown || key === game.keys.key2 & !game.smoothMoves.keyArrowDown) {
 		game.smoothMoves.keyArrowDown = true;
 	} 
 
 	switch(key) {
-		case 53:
-		case 101:
+		case 53: // 5 key
+		case 101: // 5 key on numpad
 			game.checkClue();
 			break;
-		case 55:
-		case 103:
+		case 55: // 7 key
+		case 103: // 7 key on numpad
 			if (timeDelta > 700) {
 				runner.jump(false); // jump left
 				time = timestamp;
 			}
 			break;
-		case 57:
-		case 105:
+		case 57: // 9 key 
+		case 105: // 9 key on numpad
 			if (timeDelta > 700) {
 				runner.jump(true); // jump right
 				time = timestamp;
 			}
 			break;
-		case 80:
+		case 80: // 'p' 
 			game.showProblem();
 			break;
-		case 72:
+		case 72: // 'h'
 			game.hideProblem();
 			break;
 	}
@@ -719,13 +807,13 @@ game.keyUp = function(eventObj) {
 		timestamp = eventObj.timeStamp,
 		timeDelta = eventObj.timeStamp - game.smoothMoves.time;
 
-	if (key === 37 || key === 100 & game.smoothMoves.keyArrowLeft) {
+	if (key === game.keys.arrowLeft || key === game.keys.key4 & game.smoothMoves.keyArrowLeft) {
 		game.smoothMoves.keyArrowLeft = false;
-	} else if (key === 39 || key === 102 & game.smoothMoves.keyArrowRight) {
+	} else if (key === game.keys.arrowRight || key === game.keys.key6 & game.smoothMoves.keyArrowRight) {
 		game.smoothMoves.keyArrowRight = false;
-	} else if (key === 38 || key === 104 & game.smoothMoves.keyArrowUp) {
+	} else if (key === game.keys.arrowUp || key === game.keys.key8 & game.smoothMoves.keyArrowUp) {
 		game.smoothMoves.keyArrowUp = false;
-	}  else if (key === 40 || key === 98 & game.smoothMoves.keyArrowDown) {
+	}  else if (key === game.keys.arrowDown || key === game.keys.key2 & game.smoothMoves.keyArrowDown) {
 		game.smoothMoves.keyArrowDown = false;
 	} 
 }
@@ -751,15 +839,7 @@ game.smoothMoves.tick();
 $('.solution').on('change', function(e) {
 	var val = this.value;
 
-	if (val) {
-		val = val.replace(/[\']/gim, '"');
-		val = val.replace(/[\s;]/gim, "");
-	}
-
-	if (val === clues[gv.level].solution) {
-		game.increasePoints(100);
-		game.render();
-	}
+	game.checkProblemAnswer(val);
 });
 
 

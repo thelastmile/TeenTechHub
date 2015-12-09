@@ -279,6 +279,7 @@ section {
   height: 40px;
   position: fixed;
   z-index: 1000;
+  background-color: white;
   background-image: url("../images/nav-icon.svg");
   background-size: 40px auto;
   overflow: hidden;
@@ -289,7 +290,7 @@ section {
 }
 .nav-check:checked ~ .nav-label {
   text-align: left;
-  background-color: #ccc;
+  background-color: white;
   background-position: center bottom;
 }
 #homepage-slide {
@@ -309,7 +310,7 @@ section {
 }
 @media only screen and (min-width: 45em) {
 	.nav {
-		height: 2.9em;
+		height: 2.95em;
 		line-height: 3em;
 		background-color: white;
 		display: inline-block;
@@ -319,6 +320,9 @@ section {
 		font-size: 80%;
 		letter-spacing: .5px;
 		z-index: 10000;
+	}
+	.nav li {
+		cursor: pointer;
 	}
 	.nav li:hover {
 		background-color: rgba(18,143,170,.5);
@@ -395,7 +399,7 @@ header .play-game .play-info {
   width: 8em;
   padding: 1em;
   border-radius: 50%;
-  background-color: #2B2C6D;
+  background-color: #F02194;
   transform: rotate(-30deg);
 }
 header .play-game a {

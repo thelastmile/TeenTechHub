@@ -19,9 +19,9 @@ var clues = [
 			{ x: 0, width: bcgSize, y: 214, height: 0, movement: 'run'}
 		],
 		clues: [
-			{ id: 'clue3', left: -659, top: 142, clue: "hmmm...this clue says, \"Have you ever heard of variables? Variables are like buckets, except you fill them with information, not water.\" Not sure what that means yet, but let's keep moving." },
+			{ id: 'clue3', left: -659, top: 142, clue: "hmmm...this clue says, \"Variables are like buckets, except you fill them with information, not water.\"" },
 			{ id: 'clue4', left: -953, top: 142, clue: "Hello earthling, listen well. To declare a variable, you must type:<br><i><b>var anyNameIChoose;</b></i><br>Now scram, I have things to do and worlds to explore." },
-			{ id: 'clue5', left: -317, top: 214, clue: "Nice, a clue carved into the bottom of the rock. It says, \"variable creation is called declaring a variable, and giving it a value is called assigning a value.\"" },
+			{ id: 'clue5', left: -317, top: 214, clue: "Nice, a clue carved into the bottom of the rock. It says, \"variable creation is called <i>declaring</i> a variable, and giving it a value is called <i>assigning</i> the variable a value.\"" },
 			{ id: 'clue6', left: -1015, top: 214, clue: "Inside the vase was a clue. It says, \"To create a variable and assign it a value, type:<br><i><b>var myBucket = 'some value';</i></b>" }
 		]
 	},
@@ -39,7 +39,7 @@ var clues = [
 			{ id: 'clue1', left: -465, top: 110, clue: "Nice, a clue. It says, \"Variables can hold many different types of information. Including objects, strings, numbers, and arrays.\"" },
 			{ id: 'clue2', left: -550, top: 169, clue: "I can barely understand you in that dogish tongue, but I think you're saying that a string is just text inside quotes, like this: <br><i><b>var str = 'a string';</b></i>" },
 			{ id: 'clue3', left: -752, top: 110, clue: "I see a piece of paper, but my hand will barely fit. Got it though. The paper says, \"A number in most programming languages is a number without quotes:<br><i><b>var num = 40;</b></i><br>If you put '40' inside quotes, then it's actually a string." },		
-			{ id: 'clue4', left: -1094, top: 110, clue: "Hmmm...the inside of the fireplace has something carved into it. It says, \"Numbers do not have quotes, strings do." }
+			{ id: 'clue4', left: -1094, top: 110, clue: "Hmmm...the inside of the fireplace has something carved into it. It says, \"Numbers do not have quotes, strings do.\"" }
 		]
 	},
 	{ 

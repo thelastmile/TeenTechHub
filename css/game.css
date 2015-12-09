@@ -23,7 +23,7 @@ body {
 	overflow-x: hidden;
 }
 
-@media only screen and (max-width: 30em) {
+@media only screen and (max-width: 40em) {
 	html, body {
 		zoom: 1.50;
 	}
@@ -100,16 +100,38 @@ div .game-container {
   padding-right: 3em;
 }
 .info-container .pause {
+	cursor: pointer;
 	position: absolute;
   right: 2px;
-  z-index: 10000;
   top: .5px;
+  z-index: 10000;
   color: white;
   font-size: 5px;
   border: .5px solid #EE6C45;
   border-radius: 2px;
   padding: 1px;
   font-weight: bold;
+  background-color: #EE6C45;
+  width: 2.7em;
+  text-align: center;
+}
+.info-container .home {
+	position: absolute;
+  right: 20px;
+  top: .5px;
+  z-index: 1000;
+  font-size: 5px;
+  border: .5px solid #EE6C45;
+  border-radius: 2px;
+	padding: 1px;
+	font-weight: bold;
+	background-color: #EE6C45;
+	width: 2.7em;
+	text-align: center;
+}
+.info-container .home a {
+	color: white;
+	text-decoration: none;
 }
 
 
@@ -131,6 +153,7 @@ div .game-container {
 	font-size: larger;
 	margin-bottom: .5em;
 	margin-top: .7em;
+	cursor: pointer;
 }
 .game-instructions .game-instructions-info {
 	display: none;
@@ -145,7 +168,6 @@ p.game-instructions-info {
 .game-instructions tbody tr {
 	line-height: .5em;
 }
-
 
 
 
@@ -209,7 +231,7 @@ p.game-instructions-info {
   background-color: rgba(255,255,255,.8);
   border-radius: 6px;
 }
-input {
+.prob-area input {
 	height: 10px;
 	font-size: 7px;
 	border-radius: 4px;
@@ -217,4 +239,8 @@ input {
 	width: 75%;
 	text-align: center;
 	color: #5D5D60;
+}
+.prob-area .wrong-answer {
+	color: red;
+	display: none;
 }
